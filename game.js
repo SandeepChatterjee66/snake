@@ -60,4 +60,12 @@ function showConclusion(score) {
     ctx.fillText("score: " + score, canvas.width/2, canvas.height/2-40);
     ctx.font="20px Arial";
     ctx.fillText("press space to start", canvas.width/2, canvas.height/2+80);
+    
+    // starting game again when space is pressed
+    this.onkeypress = function(e) {
+      if (gameStarted == false && e.keyCode == 32) { // 32 = Spacebar
+        gameStarted = true;
+        gamerun();
+      }
+    }
 }
